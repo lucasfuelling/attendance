@@ -1,0 +1,24 @@
+sudo apt update && sudo apt upgrade -y
+sudo apt install mariadb-server
+sudo mysql_secure_installation
+
+# remote database access
+sudo nano  /etc/mysql/my.cnf
+[mysqld]
+skip-networking=0
+skip-bind-address
+
+# enable remote user
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.%.%' IDENTIFIED BY 'jiou9618' WITH GRANT OPTION;
+
+mysql -uroot -pjiou9618
+
+
+# autostart
+mkdir /home/pi/.config/autostart
+nano /home/pi/.config/autostart/start.desktop
+
+[Desktop Entry]
+Type=Application
+Name=Clock
+Exec=/usr/bin/python3 /home/pi/attendance/main.py
