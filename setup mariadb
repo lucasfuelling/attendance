@@ -8,13 +8,15 @@ sudo nano  /etc/mysql/my.cnf
 skip-networking=0
 skip-bind-address
 
-# enable remote user
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.%.%' IDENTIFIED BY 'jiou9618' WITH GRANT OPTION;
-
+# login to mariadb
 mysql -uroot -pjiou9618
 
+# enable remote user
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.%.%' IDENTIFIED BY 'jiou9618' WITH GRANT OPTION;
+exit
 
-# autostart
+
+# setup autostart
 mkdir /home/pi/.config/autostart
 nano /home/pi/.config/autostart/start.desktop
 
