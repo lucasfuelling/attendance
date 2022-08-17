@@ -2,3 +2,11 @@ git clone ...
 pip install -r requirements.txt
 sudo chmod +x start.sh
 mv start.sh /home/pi/Desktop
+
+# mount network drive
+sudo nano /etc/fstab
+192.168.1.98:/volume1/attendance /mnt/NAS nfs defaults,_netdev 0 0
+# then run following
+sudo raspi-config
+select network on boot
+sudo reboot
