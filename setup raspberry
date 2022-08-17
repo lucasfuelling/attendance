@@ -1,6 +1,6 @@
 git clone ...
 pip install -r requirements.txt
-sudo chmod +x start.sh
+sudo chmod +x start.sh backup.sh
 mv start.sh /home/pi/Desktop
 
 # mount network drive
